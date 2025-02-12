@@ -82,9 +82,9 @@ class __DateItemState extends State<DateItem> {
             _defaultTextStyle = widget.dateStyle;
 
             /// Check and set [Background] of today
-            if (compareDate(widget.date, widget.today)) {
+            /*if (compareDate(widget.date, widget.today)) {
               _defaultBackgroundColor = widget.todayBackgroundColor;
-            } else if (!data.hasError && data.hasData) {
+            } else */if (!data.hasError && data.hasData) {
               final DateTime? dateSelected = data.data;
               if (compareDate(widget.date, dateSelected)) {
                 _defaultBackgroundColor = widget.pressedBackgroundColor;

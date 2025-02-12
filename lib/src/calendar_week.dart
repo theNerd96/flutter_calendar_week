@@ -288,7 +288,7 @@ class _CalendarWeekState extends State<CalendarWeek> {
   Stream<DateTime?>? _stream;
 
   /// Page controller
-  late PageController _pageController;
+  late PageController pageController;
 
   CalendarWeekController _defaultCalendarController = CalendarWeekController();
 
@@ -297,7 +297,7 @@ class _CalendarWeekState extends State<CalendarWeek> {
 
   void _jumToDateHandler(DateTime? dateTime) {
     _cacheStream.add(dateTime);
-    _pageController.animateToPage(widget.controller!._currentWeekIndex,
+    pageController.animateToPage(widget.controller!._currentWeekIndex,
         duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
 
@@ -318,7 +318,7 @@ class _CalendarWeekState extends State<CalendarWeek> {
 
     /// Init Page controller
     /// Set [initialPage] is page contain today
-    _pageController = PageController(initialPage: controller._currentWeekIndex);
+    pageController = PageController(initialPage: controller._currentWeekIndex);
   }
 
   @override
@@ -338,7 +338,7 @@ class _CalendarWeekState extends State<CalendarWeek> {
       child: ScrollConfiguration(
         behavior: CustomScrollBehavior(),
         child: PageView.builder(
-          controller: _pageController,
+          controller: pageController,
           itemCount: controller._weeks.length,
           onPageChanged: (currentPage) {
             widget.controller!._currentWeekIndex = currentPage;
