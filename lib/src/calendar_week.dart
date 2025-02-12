@@ -277,10 +277,10 @@ class CalendarWeek extends StatefulWidget {
           onWeekChanged ?? () {});
 
   @override
-  _CalendarWeekState createState() => _CalendarWeekState();
+  CalendarWeekState createState() => CalendarWeekState();
 }
 
-class _CalendarWeekState extends State<CalendarWeek> {
+class CalendarWeekState extends State<CalendarWeek> {
   /// [_streamController] for emit date press event
   final CacheStream<DateTime?> _cacheStream = CacheStream<DateTime?>();
 
