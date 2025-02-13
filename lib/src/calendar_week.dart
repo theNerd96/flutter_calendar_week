@@ -65,7 +65,7 @@ Example:
   bool get hasClient => _hasClient;
 
   /// Store a selected date
-  DateTime? _selectedDate;
+  DateTime? _selectedDate = DateTime.now();
 
   /// Get [_selectedDate] selected;
   DateTime get selectedDate => _selectedDate ?? _today;
